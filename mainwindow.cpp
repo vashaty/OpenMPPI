@@ -21,11 +21,13 @@ void MainWindow::on_pushButton_clicked()
     cores = ui->spinBoxCores->text().toInt();
     N = ui->spinBoxNvalue->text().toInt();
 
-    result = 0;
+    result = 0.0;
 
     omp_set_num_threads(cores);
-
-    qDebug() << cores;
-
+    #pragma omp parallel for reduction(+: result)
+       for (int i = 0; i < N-1; i++){
+            result +=(4/(1+((((double)i+0.5)/(double)N)*(((double)i+0.5)/(double)N))))*(1/(double)N);
+       }
+    ui->textEditResult->setText(QString::number(result));
 }
 

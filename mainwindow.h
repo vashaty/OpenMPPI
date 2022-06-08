@@ -20,7 +20,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    unsigned int result = 0;
+    double result = 0;
     unsigned short int N = 1000;
     unsigned int cores = 1;
 };
