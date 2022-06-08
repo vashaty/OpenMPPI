@@ -24,10 +24,13 @@ void MainWindow::on_pushButton_clicked()
     result = 0;
 
     omp_set_num_threads(threads);
+
     qDebug() << omp_get_max_threads();
+
     #pragma omp parallel for reduction(+: result)
        for (unsigned int i = 0; i < N-1; i++){
             result +=(4/(1+((((double)i+0.5)/(double)N)*(((double)i+0.5)/(double)N))))*(1/(double)N);
+//            qDebug() << "Thread NUM: " << omp_get_thread_num() << " Result: " << result;
        }
     ui->textEditResult->setText(QString::number(result));
 }
