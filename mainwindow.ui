@@ -11,16 +11,28 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>PI parallel calculator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>PI parallel calculator</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,1,0">
       <item>
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>N value:</string>
+         <string>Accuracy (N value):</string>
         </property>
        </widget>
       </item>
@@ -30,18 +42,25 @@
          <number>1000</number>
         </property>
         <property name="maximum">
-         <number>99999</number>
+         <number>999999999</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonMaxN">
+        <property name="text">
+         <string>MAX</string>
         </property>
        </widget>
       </item>
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1,0">
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>CPU cores:</string>
+         <string>Number of threads:</string>
         </property>
        </widget>
       </item>
@@ -49,6 +68,13 @@
        <widget class="QSpinBox" name="spinBoxCores">
         <property name="minimum">
          <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonMaxThreads">
+        <property name="text">
+         <string>MAX</string>
         </property>
        </widget>
       </item>

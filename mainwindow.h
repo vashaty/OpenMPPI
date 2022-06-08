@@ -18,10 +18,14 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButtonMaxN_clicked();
+
+    void on_pushButtonMaxThreads_clicked();
+
 private:
     Ui::MainWindow *ui;
     double result = 0;
     unsigned short int N = 1000;
-    unsigned int cores = 1;
+    unsigned short int threads = 1;
 };
 #endif // MAINWINDOW_H
